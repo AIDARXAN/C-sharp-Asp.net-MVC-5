@@ -1,0 +1,29 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <h3>Book market</h3>
+    <table>
+        <tr>
+            <td><p>Book name</p></td>
+            <td><p>Author</p></td>
+            <td><p>Price</p></td>
+            <td><p>InStock</p></td>
+            <td></td>
+        </tr>
+        @foreach (var b in ViewBag.Books)
+        {
+            <tr>
+                <td><p>@b.Name</p></td>
+                <td><p>@b.Author</p></td>
+                <td><p>@b.Price</p></td>
+                <td><p>@b.InStock</p></td>
+                <td><p><a href="/Home/Buy/@b.Id" onclick="b.InStock - 1">Buy</a></p></td>
+            </tr>
+        }
+        @*@Html.Partial("Partial")*@
+
+        
+    </table>
+</div>
